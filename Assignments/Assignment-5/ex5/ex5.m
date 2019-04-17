@@ -163,7 +163,7 @@ pause;
 %  lambda = 0. You should try running the code with different values of
 %  lambda to see how the fit and learning curve change.
 %
-
+fprintf('# Part 7 start\n');
 lambda = 0;
 [theta] = trainLinearReg(X_poly, y, lambda);
 

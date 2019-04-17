@@ -17,7 +17,7 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 predictions = X * theta;
-Errors0 = predictions - y;
+Errors0 = predictions - y; 
 Errors1 = Errors0 .* secCol;
 temp0 = theta(1,1) - alpha*(1/m)*sum(Errors0);
 temp1 = theta(2,1) - alpha*(1/m)*sum(Errors1);

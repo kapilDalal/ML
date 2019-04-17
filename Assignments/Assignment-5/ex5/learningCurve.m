@@ -14,12 +14,13 @@ function [error_train, error_val] = ...
 %   datasets, you might want to do this in larger intervals.
 %
 
-% Number of training examples
+% Number of training examples 
 m = size(X, 1);
 
 % You need to return these values correctly
 error_train = zeros(m, 1);
 error_val   = zeros(m, 1);
+
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: Fill in this function to return training errors in 
@@ -52,12 +53,12 @@ error_val   = zeros(m, 1);
 %
 
 % ---------------------- Sample Solution ----------------------
-
-
-
-
-
-
+thetaVal = trainLinearReg(Xval ,yval, lambda);
+for i = 1:m
+	theta = trainLinearReg(X(1:i, :),y(1:i),lambda);
+	[error_train(i),grad] = linearRegCostFunctionWithoutReg(X(1:i, :),y(1:i), theta, lambda);
+	[error_val(i),grad] = linearRegCostFunctionWithoutReg(Xval ,yval, theta , lambda);
+end
 
 % -------------------------------------------------------------
 
